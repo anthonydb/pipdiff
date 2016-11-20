@@ -10,9 +10,9 @@ except ImportError:
     import xmlrpc.client
 
 try:
-    pypi = ServerProxy("http://pypi.python.org/pypi")
+    pypi = ServerProxy("https://pypi.python.org/pypi")
 except NameError:
-    pypi = xmlrpc.client.ServerProxy("http://pypi.python.org/pypi")
+    pypi = xmlrpc.client.ServerProxy("https://pypi.python.org/pypi")
 
 def main():
     try:
