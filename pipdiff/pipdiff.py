@@ -14,6 +14,7 @@ try:
 except NameError:
     pypi = xmlrpc.client.ServerProxy("https://pypi.python.org/pypi")
 
+
 def main():
     try:
         from pip import get_installed_distributions
@@ -21,7 +22,8 @@ def main():
         from sys import exit
         exit("pip not available")
 
-    for distribution in sorted(get_installed_distributions(),
+    for distribution in sorted(
+            get_installed_distributions(),
             key=lambda distribution: distribution.project_name):
         remote = ''
         project_name = distribution.project_name
